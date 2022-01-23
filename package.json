@@ -1,0 +1,21 @@
+{
+  "name": "bully-a-twitter-blue",
+  "version": "1.0.0",
+  "description": "download twitter blue users' profile picture with nft in it and automatically block them in the process",
+  "main": "./server/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@personal:louispawaon/bully-a-twitter-blue.git"
+  },
+  "author": "louispawaon",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.2",
+    "nodemon": "^2.0.15"
+  }
+}
