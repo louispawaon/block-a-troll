@@ -1,2 +1,2 @@
-# bully-a-twitter-blue
-download twitter blue users' profile picture with nft in it and automatically block them in the process
+# block-some-trolls
+filter and block trolls by entering a username or a hashtag on our platform.
