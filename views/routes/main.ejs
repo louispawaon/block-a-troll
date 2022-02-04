@@ -1,0 +1,28 @@
+<h1>main form</h1>
+<h1>goodmorning <%=username%> </h1> 
+<h1>block a user</h1>
+<button id="optionOne">Block A User</button>
+<button id="optionTwo">Mass Block Users under Hashtag</button>
+<form action="/block" method="POST" id="blockUser">
+    <input type="text" name="account">
+    <input type="submit" value="submit">
+</form>
+
+<h1>or block specific users under a hashtag</h1>
+<form action="/blockMass" method="POST" id="blockMass">
+    <input type="text" name="hashtag">
+    <input type="submit" value="submit">
+</form>
+
+<script>
+    document.getElementById("blockUser").style.display = "none";
+    document.getElementById("blockMass").style.display = "none";
+    document.getElementById("optionOne").onclick=()=>{
+        document.getElementById("blockUser").style.display = "block"; 
+        document.getElementById("blockMass").style.display = "none";
+    }
+    document.getElementById("optionTwo").onclick=()=>{
+        document.getElementById("blockUser").style.display = "none"; 
+        document.getElementById("blockMass").style.display = "block";
+    }
+</script>
