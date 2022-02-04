@@ -14,6 +14,7 @@
   "author": "louispawaon",
   "license": "MIT",
   "dependencies": {
+    "axios": "^0.25.0",
     "body-parser": "^1.19.1",
     "cors": "^2.8.5",
     "dotenv": "^14.2.0",
@@ -21,6 +22,7 @@
     "express": "^4.17.2",
     "express-session": "^1.17.2",
     "nodemon": "^2.0.15",
+    "oauth": "^0.9.15",
     "passport": "^0.5.2",
     "passport-twitter": "^1.0.4",
     "twit": "^2.2.11"
