@@ -1,10 +1,21 @@
+const passport = require('passport');
+const Strategy = require('passport-twitter').Strategy;
 const twit = require('twit');
-require('./passport');
-const account = require('./app');
-console.log(account);
 
-connectClient=(token,tokenSecret)=>{
-//Twit API
+passport.serializeUser(function(user, callback) {
+    callback(null, user);
+})
+
+passport.deserializeUser(function(obj, callback) {
+    callback(null, obj);
+})
+
+passport.use(new Strategy({
+    consumerKey: process.env.TWITTER_CONSUMER_KEY,
+    consumerSecret: process.env.TWITTER_CONSUMER_SECRET,
+    callbackURL: 'http://127.0.0.1:3000/twitter/return'
+}, function(token, tokenSecret, profile, callback) {
+    
     var client = new twit({
         consumer_key:process.env.TWITTER_CONSUMER_KEY,
         consumer_secret:process.env.TWITTER_CONSUMER_SECRET,
@@ -14,7 +25,7 @@ connectClient=(token,tokenSecret)=>{
         client_secret:process.env.TWITTER_CLIENT_SECRET
     });
 
-    
+    //block a single specific user
     getUser=(account)=>{
         console.log(account);
         const params = {screen_name: account};
@@ -46,5 +57,7 @@ connectClient=(token,tokenSecret)=>{
             });
         });  
     }
-}
+
+    return callback(null, profile);
+}));
 
