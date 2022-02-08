@@ -1,7 +1,7 @@
 {
   "name": "bully-a-twitter-blue",
   "version": "1.0.0",
-  "description": "download twitter blue users' profile picture with nft in it and automatically block them in the process",
+  "description": "filter and block trolls by entering a username or a hashtag on our platform",
   "main": "./server/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
