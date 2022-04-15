@@ -8,6 +8,12 @@
 </head>
 <body>
     <h1>main form</h1>
+    <% if (messages.success) { %>
+        <div class="alert alert-success" role="alert"><%- messages.success %></div>
+    <% } %>
+    <% if (messages.error) { %>
+        <div class="alert alert-success" role="alert"><%- messages.error %></div>
+    <% } %>
     <h1>goodmorning <%=username%> </h1> 
     <h1>block a user</h1>
     <button id="optionOne">Block A User</button>

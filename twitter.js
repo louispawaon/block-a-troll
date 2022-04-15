@@ -35,6 +35,7 @@ class BlockMass extends Twitter{
         super(config);
         this.hashtag=hashtag;
     }
+
     //For blocking all users under hashtag
     getHashtag(hashtag){
         const client = new twit(this.getConfig());
@@ -44,19 +45,14 @@ class BlockMass extends Twitter{
                 var userResult=JSON.stringify(data.statuses);
                 var users=JSON.parse(userResult);
                 users.forEach(x=>userList.push(x.user.screen_name));
-                console.log(userList);
-                blockMany(userList);
-        });  
-    }
-
-    blockMany(userList){
-        const client = new twit(this.getConfig());
-        userList.forEach(function(x){
-            const params={screen_name: x};
-            //block time
-            client.post('blocks/create', params, function(err, data, response) {
-                console.log(data)
-            });
+                console.log(userList); //idelete ni pag production na
+                userList.forEach(function(x){
+                    const params={screen_name: x};
+                    //block time
+                    client.post('blocks/create', params, function(err, data, response) {
+                        console.log(data)
+                    });
+                });  
         });  
     }
 }
